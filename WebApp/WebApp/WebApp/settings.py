@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -89,12 +89,15 @@ WSGI_APPLICATION = 'WebApp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DB_USER = os.environ.get('PG_NAME', '')
+DB_PWD = os.environ.get('PG_PWD', '')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'CloudComputingDB',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': DB_USER,
+        'PASSWORD': DB_PWD,
         'HOST': 'localhost',
         'PORT': '',
     }
