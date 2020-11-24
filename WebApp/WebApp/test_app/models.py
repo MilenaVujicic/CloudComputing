@@ -4,6 +4,5 @@ from django.db import models
 
 
 class TestClass(models.Model):
-    text = models.CharField(null=False)
-
+    text = models.CharField(null=False, max_length=255)
 

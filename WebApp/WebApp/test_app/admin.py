@@ -3,4 +3,4 @@ from .models import TestClass
 # Register your models here.
 
 
-admin.sites.register(TestClass)
+admin.site.register(TestClass)
