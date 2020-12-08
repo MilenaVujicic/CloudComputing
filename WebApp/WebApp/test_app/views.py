@@ -8,7 +8,7 @@ from .serializers import TestSerializer
 
 def init_counter(request):
     t = TestClass()
-    serializer = TestSerializer(t)
+    serializer = TestSerializer(data=t)
     if serializer.isValid():
         serializer.save()
 
