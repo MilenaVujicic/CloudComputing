@@ -3,7 +3,7 @@ version: "3.7"
 services:
   db:
     image: postgres
-    restart: unless-stopped
+    restart: unless-stopped   
     volumes: 
       - ./postgres-data:/var/lib/postgresql/data
     ports:
@@ -13,6 +13,10 @@ services:
   django-app:
     build: .
     restart: unless-stopped
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
     ports:
       - "8000:8000"
     volumes:
