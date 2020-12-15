@@ -8,11 +8,10 @@ from .serializers import TestSerializer
 
 def init_counter(request):
     t = TestClass()
-    serializer = TestSerializer(data=t)
-    if serializer.isValid():
-        serializer.save()
+    t.counter += 1
+    t.save()
 
-    return HttpResponse(status=
+    return HttpResponse(content=t.counter, status=
                         200)
 
 
@@ -23,6 +22,6 @@ def test_route(request):
         t.save()
     except TestClass.DoesNotExist:
         return HttpResponse(status=404)
-
+    
     return HttpResponse(content=t.counter, status=200)
 

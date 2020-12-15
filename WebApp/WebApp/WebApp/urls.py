@@ -19,7 +19,7 @@ from test_app.views import test_route, init_counter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', test_route),
-    path('init/', init_counter)
+    path('cnt/', test_route),
+    path('init/', init_counter),
 
 ]
