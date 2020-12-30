@@ -4,5 +4,5 @@ from django.db import models
 
 
 class TestClass(models.Model):
-    counter = models.IntegerField(default=0)
-
+    counter1 = models.IntegerField(default=0)
+    counter2 = models.IntegerField(default=0)
