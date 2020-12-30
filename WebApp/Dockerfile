@@ -4,6 +4,7 @@ WORKDIR /usr/src
 
 EXPOSE 8000
 EXPOSE 5433
+EXPOSE 80
 
 RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 RUN pip install psycopg2

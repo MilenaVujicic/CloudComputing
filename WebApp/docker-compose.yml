@@ -13,6 +13,8 @@ services:
       - "5433:5432"
     container_name: postgres
 
+
+
   django-app:
     build: .
     restart: unless-stopped
@@ -26,5 +28,16 @@ services:
       - .:/code
     depends_on: 
       - db
+
+    
+  web:
+    image: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app.conf:/etc/nginx/conf.d/app.conf
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
 
   
