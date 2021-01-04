@@ -17,7 +17,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 
-CMD cd WebApp && python manage.py migrate \
+CMD cd WebApp && python manage.py migrate --run-syncdb \
 && python manage.py runserver 0.0.0.0:8000
 
 

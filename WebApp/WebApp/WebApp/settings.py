@@ -93,6 +93,7 @@ WSGI_APPLICATION = 'WebApp.wsgi.application'
 DB_USER = os.environ.get('POSTGRES_USER')
 DB_NAME = os.environ.get('POSTGRES_DB')
 DB_PWD = os.environ.get('POSTGRES_PASSWORD')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
