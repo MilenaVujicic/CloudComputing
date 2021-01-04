@@ -12,7 +12,7 @@ RUN pip install psycopg2
 RUN apk update && apk add bash
 
 RUN pip install --upgrade pip
-COPY requirements.txt /
+COPY WebApp/requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
 
