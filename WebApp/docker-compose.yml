@@ -15,7 +15,7 @@ services:
 
 
   django-app:
-    build: ./
+    image: milenavujicic/cloudcomputing
     restart: on-failure:10
     environment: 
       - POSTGRES_USER=postgres
@@ -31,7 +31,7 @@ services:
     container_name: django_app
 
   django-app-2:
-    build: ./
+    image: milenavujicic/cloudcomputing
     restart: on-failure:10
     environment: 
       - POSTGRES_USER=postgres
@@ -48,6 +48,7 @@ services:
     
   web:
     build: ./nginx
+    restart: on-failure:10
     ports:
       - "8080:80"
     depends_on:
